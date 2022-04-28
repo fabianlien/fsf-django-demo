@@ -8,5 +8,21 @@
 </head>
 <body>
     <h1>Things I need to do:</h1>
+    <table>
+        <tr>
+            <td><strong>Name:</strong></td>
+        </tr>
+        {% for item in items %}
+            <tr>
+                {% if item.done %}
+                    <td><strike>{{item.name}}</strike></td>
+                {% else %}
+                    <td>{{item.name}}</td>
+                {% endif %}
+            </tr>
+        {% empty %}
+            <tr><td>Nothing to do here...</td></tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
