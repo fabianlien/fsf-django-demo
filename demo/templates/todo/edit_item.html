@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add item to to-do list</title>
+    <title>Edit item in to-do list</title>
 </head>
 <body>
-    <h1>Add item:</h1>
-    <form action="add_item" method="POST">
+    <h1>Edit item:</h1>
+    <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <div>
             <p>
-                <button type="submit">Add Item</button>
+                <button type="submit">Update Item</button>
             </p>
         </div>
     </form>
