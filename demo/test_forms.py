@@ -4,7 +4,6 @@ from .forms import ItemForm
 
 # Create your tests here.
 class TestItemForm(TestCase):
-
     def test_name_field_required(self):
         form = ItemForm({'name': ''})
         self.assertTrue(form.is_valid() is False)
@@ -14,3 +13,6 @@ class TestItemForm(TestCase):
     def test_done_field_NOT_required(self):
         form = ItemForm({'name': 'Test'})
         self.assertTrue(form.is_valid())
+
+    def test_form_explicite_attributes(self):
+        self.assertEqual(ItemForm().Meta.fields, ['name', 'done'])
